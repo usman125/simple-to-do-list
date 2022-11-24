@@ -1,0 +1,66 @@
+.to-do-list {
+  /* margin: 20px; */
+}
+
+.to-do-list ul {
+  padding: 0px 15px 15px;
+}
+
+.to-do-list ul li {
+  list-style: none;
+}
+
+.to-do-list ul li .item-info {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.to-do-list ul li .item-info .action-btns {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+form> :nth-child(1) {
+  width: 70%;
+  margin-right: 10px;
+}
+
+form> :nth-child(2) {
+  width: 30%;
+}
+
+.list-count {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 0px 0px;
+}
+
+.me-2 {
+  margin-right: 1rem;
+}
+
+.header {
+  position: sticky;
+  top: 0.5px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
+}

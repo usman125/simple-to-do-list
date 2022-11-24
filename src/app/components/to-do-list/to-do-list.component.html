@@ -1,0 +1,46 @@
+
+<div class="to-do-list">
+  <div class="header">
+    <form (ngSubmit)="addToDoListItem()">
+      <input type="text" name="itemName" placeholder="New Title" [ngModel]="itemName" (ngModelChange)="itemName=$event" />
+      <button [disabled]="itemName === ''" type="submit">Add Item</button>
+    </form>
+    <div class="list-count">
+      <div class="me-2">
+        <label for="filterQuery">Filter list: </label>
+        <select name="filterQuery" id="filterQuery" [(ngModel)]="filterQuery">
+          <option value="">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+      <div class="me-2">
+        Pending: <strong>{{toDoList | toDoListPendingCount}}</strong>
+      </div>
+      <div class="me-2">
+        Completed: <strong>{{toDoList | toDoListCompletedCount}}</strong>
+      </div>
+      <div>
+        Total: <strong>{{toDoList | toDoListCount}}</strong>
+      </div>
+    </div>
+  </div>
+  <ul>
+    <li *ngFor="let item of toDoList | toDoListFilter:filterQuery; let i = index;">
+      <div class="item-info" [ngStyle]="{borderColor: item.completed ? 'green' : 'red'}">
+        <div class="title">
+          {{item.title}}
+        </div>
+        <div class="action-btns">
+          <div [ngClass]="{'cursor-pointer': !item.completed}"
+            (click)="!item.completed ? completeToDoListItem(item): ''">
+            {{item.completed ? 'Done' : 'Mark Done'}}
+          </div>
+          <div class="cursor-pointer" (click)="removeToDoListItem(i)">
+            Remove
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
