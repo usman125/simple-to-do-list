@@ -50,4 +50,6 @@ export class ToDoListComponent implements OnInit {
     this.toDoList.unshift(newItem);
     this.itemName = ''
   }
+
+  
 }
